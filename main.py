@@ -9,9 +9,16 @@ window.tracer(0)
 # Create and customise the turtle
 player = turtle.Turtle()
 player.shape('turtle')
-player.shapesize(2)
+player.shapesize(1)
 player.color('red')
 player.penup()
+
+# Create enemies
+enemy = turtle.Turtle()
+enemy.shape('circle')
+enemy.shapesize(1)
+enemy.color('white')
+enemy.setposition(60.00,30.00)
 
 # Define the functions to make the turtle movements
 def turn_left():
@@ -29,8 +36,16 @@ def back():
 # Create the key bindings
 window.listen()
 
+# Scores and puntuation
+score = 0
+
 # Main loop which makes the turtle move
 while True:
+  print(player.pos())
+  print(score)
+  if player.position() == enemy.position():
+    score = score + 10
+
   if window.onkeypress(turn_left, "Left"):
       turn_left()
   if window.onkeypress(turn_right, "Right"):
