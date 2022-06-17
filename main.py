@@ -9,6 +9,7 @@ window.tracer(0)
 # Create and customise the turtle
 player = turtle.Turtle()
 player.shape('turtle')
+player.shapesize(2)
 player.color('red')
 player.penup()
 
