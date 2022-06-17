@@ -2,6 +2,7 @@ import turtle
 
 # Create and customise the screen
 window = turtle.Screen()
+window.screensize(canvwidth=400, canvheight=400)
 window.bgcolor('black')
 window.tracer(0)
 
@@ -27,16 +28,16 @@ def back():
 # Create the key bindings
 window.listen()
 
-# Main loop which makes the turtle move forward contiunously, forever
+# Main loop which makes the turtle move
 while True:
-    if window.onkeypress(turn_left, "Left"):
-        turn_left()
-    if window.onkeypress(turn_right, "Right"):
-        turn_right
-    if window.onkeypress(forward, "Up"):
-        forward
-    if window.onkeypress(back, "Down"):
-        back
-    window.update()
+  if window.onkeypress(turn_left, "Left"):
+      turn_left()
+  if window.onkeypress(turn_right, "Right"):
+      turn_right
+  if window.onkeypress(forward, "Up"):
+      forward
+  if window.onkeypress(back, "Down"):
+      back
+  window.update()
   
 # turtle.done() This line is no longer needed now there's a while True loop
